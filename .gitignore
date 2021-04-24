@@ -23,9 +23,17 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
+[Bb]uild/
+[Bb]uilds/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+[Ll]ibrary/
+[Tt]emp/
+/[Uu]ser[Ss]ettings/
+
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+!/[Aa]ssets/**/*.meta
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

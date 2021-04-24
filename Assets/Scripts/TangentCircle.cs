@@ -5,45 +5,84 @@ using UnityEngine;
 public class TangentCircle : TangentEquations
 {
     public GameObject circlePrefab;
-    private GameObject innerCircleObj, outerCircleObj, tangentCircleObj;
+    GameObject innerCircleObj, outerCircleObj;
 
     public Vector4 innerCircleStats, outerCircleStats;
 
-    public float tangentRadius;
-    public float tangentDegree;
+    List<Vector4> tangentCircleStats = new List<Vector4>();
+    List<GameObject> tangentCircleObjs = new List<GameObject>();
+
+    [Range(1,64)]
+    public int tangentCircleAmount;
+
+    int prevCircleCount;
 
     // Start is called before the first frame update
     void Start()
     {
         innerCircleObj = SpawnCircle(innerCircleStats);
         outerCircleObj = SpawnCircle(outerCircleStats);
-        tangentCircleObj = SpawnCircle(outerCircleStats);
+
+        SpawnTangentCircles();
+
+        prevCircleCount = tangentCircleAmount;
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetCircleStats(ref innerCircleObj, innerCircleStats);
-        SetCircleStats(ref outerCircleObj, outerCircleStats);
-        SetTangentStats(ref tangentCircleObj, tangentDegree);
+        SetCircleStats(innerCircleObj, innerCircleStats);
+        SetCircleStats(outerCircleObj, outerCircleStats);
+
+        if (tangentCircleAmount != prevCircleCount)
+        {
+            ClearTangentCircles();
+
+            SpawnTangentCircles();
+
+            prevCircleCount = tangentCircleAmount;
+        }
+
+        for (int i = 0; i < tangentCircleAmount; i++)
+        {
+            UpdateTangentStat(i);
+            SetCircleStats(tangentCircleObjs[i], tangentCircleStats[i]);
+        }
+    }
+
+    void SpawnTangentCircles()
+    {
+        ClearTangentCircles();
+
+        for (int i = 0; i < tangentCircleAmount; i++)
+        {
+            tangentCircleObjs.Add(SpawnTangentCircle(i));
+        }
+    }
+
+    void ClearTangentCircles()
+    {
+        if (tangentCircleObjs.Count > 0)
+        {
+            foreach (GameObject oldTangentCircle in tangentCircleObjs)
+            {
+                Destroy(oldTangentCircle);
+            }
+
+            tangentCircleObjs.Clear();
+            tangentCircleStats.Clear();
+
+            tangentCircleObjs = new List<GameObject>();
+        }
     }
 
     GameObject SpawnCircle(Vector4 circleStats)
     {
-        GameObject newCircle = Instantiate(circlePrefab);
+        GameObject newCircle = Instantiate(circlePrefab, transform);
 
-        SetCircleStats(ref newCircle, circleStats);
+        SetCircleStats(newCircle, circleStats);
 
         return newCircle;
-    }
-
-    GameObject SpawnTangentCircle(float radius, float degree)
-    {
-        GameObject newTangentObj = Instantiate(circlePrefab);
-
-        SetTangentStats(ref newTangentObj, degree);
-
-        return newTangentObj;
     }
 
     /// <summary>
@@ -51,20 +90,25 @@ public class TangentCircle : TangentEquations
     /// </summary>
     /// <param name="circle">GameObject to be updated</param>
     /// <param name="stats">Position held in xyz, radius of circle held in w</param>
-    void SetCircleStats(ref GameObject circle, Vector4 stats)
+    void SetCircleStats(GameObject circle, Vector4 stats)
     {
-        circle.transform.position = new Vector3(stats.x, stats.y, stats.z);
-        circle.transform.localScale = new Vector3(stats.w, stats.w, stats.w) * 2;
+        circle.transform.position = CentrePositionOf(stats);
+        circle.transform.localScale = ScaleOf(stats);
     }
 
-    /// <summary>
-    /// Updates the position of the tangent circle
-    /// </summary>
-    /// <param name="circle">The circle of which the tangent is on</param>
-    /// <param name="degree">The angle of the tangent from the centre of the circle in degrees. Starts at top going clockwise</param>
-    void SetTangentStats(ref GameObject circle, float degree)
+    GameObject SpawnTangentCircle(int iteration)
     {
-        circle.transform.position = GetRotatedTangent(degree, outerCircleStats.w) + outerCircleObj.transform.position;
-        circle.transform.localScale = new Vector3(tangentRadius, tangentRadius, tangentRadius) * 2;
+        tangentCircleStats.Add(FindTangentStat(iteration));
+        return SpawnCircle(tangentCircleStats[iteration]);
+    }
+
+    Vector4 FindTangentStat(int iteration)
+    {
+        return FindTangentCircleBetweenTwoCircles(outerCircleStats, innerCircleStats, (360f / tangentCircleAmount) * iteration);
+    }
+
+    void UpdateTangentStat(int iteration)
+    {
+        tangentCircleStats[iteration] = FindTangentStat(iteration);
     }
 }

@@ -362,8 +362,7 @@ MonoBehaviour:
   circlePrefab: {fileID: 278631051041131173, guid: 4074cadebb835ec40b6f82339e83e2cd, type: 3}
   innerCircleStats: {x: 0, y: 0, z: 0, w: 3}
   outerCircleStats: {x: 0, y: 0, z: 0, w: 10}
-  tangentRadius: 0
-  tangentDegree: 0
+  tangentCircleAmount: 16
 --- !u!4 &1876945991
 Transform:
   m_ObjectHideFlags: 0
