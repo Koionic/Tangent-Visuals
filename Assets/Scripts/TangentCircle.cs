@@ -46,12 +46,22 @@ public class TangentCircle : TangentEquations
         return newTangentObj;
     }
 
+    /// <summary>
+    /// Updates the position and scale of the circle given
+    /// </summary>
+    /// <param name="circle">GameObject to be updated</param>
+    /// <param name="stats">Position held in xyz, radius of circle held in w</param>
     void SetCircleStats(ref GameObject circle, Vector4 stats)
     {
         circle.transform.position = new Vector3(stats.x, stats.y, stats.z);
         circle.transform.localScale = new Vector3(stats.w, stats.w, stats.w) * 2;
     }
 
+    /// <summary>
+    /// Updates the position of the tangent circle
+    /// </summary>
+    /// <param name="circle">The circle of which the tangent is on</param>
+    /// <param name="degree">The angle of the tangent from the centre of the circle in degrees. Starts at top going clockwise</param>
     void SetTangentStats(ref GameObject circle, float degree)
     {
         circle.transform.position = GetRotatedTangent(degree, outerCircleStats.w) + outerCircleObj.transform.position;
