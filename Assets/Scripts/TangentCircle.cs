@@ -7,7 +7,7 @@ public class TangentCircle : TangentEquations
     public GameObject circlePrefab;
     GameObject innerCircleObj, outerCircleObj;
 
-    public Vector4 innerCircleStats, outerCircleStats;
+    public Vector4 innerCircleStats = new Vector4(), outerCircleStats = new Vector4();
 
     List<Vector4> tangentCircleStats = new List<Vector4>();
     List<GameObject> tangentCircleObjs = new List<GameObject>();
@@ -16,6 +16,21 @@ public class TangentCircle : TangentEquations
     public int tangentCircleAmount;
 
     int prevCircleCount;
+
+    public Move gamepadInput;
+
+    Vector2 leftJoy, smoothLeftJoy;
+
+    [Range(0f, 0.05f)]
+    public float joystickSmoothAmount;
+
+    [Range(0, 1)]
+    public float distToOuterTangent;
+
+    float radiusChange;
+
+    [Range(0.1f, 10)]
+    public float radiusChangeSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +46,8 @@ public class TangentCircle : TangentEquations
     // Update is called once per frame
     void Update()
     {
+        PlayerInput();
+
         SetCircleStats(innerCircleObj, innerCircleStats);
         SetCircleStats(outerCircleObj, outerCircleStats);
 
@@ -48,6 +65,24 @@ public class TangentCircle : TangentEquations
             UpdateTangentStat(i);
             SetCircleStats(tangentCircleObjs[i], tangentCircleStats[i]);
         }
+    }
+
+    void PlayerInput()
+    {
+        leftJoy = gamepadInput.LeftJoystick;
+
+        radiusChange = gamepadInput.TriggersInput;
+
+        smoothLeftJoy = new Vector2(smoothLeftJoy.x * (1 - joystickSmoothAmount) + leftJoy.x * joystickSmoothAmount,
+                                    smoothLeftJoy.y * (1 - joystickSmoothAmount) + leftJoy.y * joystickSmoothAmount);
+
+        innerCircleStats = new Vector4(
+                               (smoothLeftJoy.x * (outerCircleStats.w - innerCircleStats.w) * (1 - distToOuterTangent)) + outerCircleStats.x,
+                               0.0f,
+                               (smoothLeftJoy.y * (outerCircleStats.w - innerCircleStats.w) * (1 - distToOuterTangent)) + outerCircleStats.z,
+                               innerCircleStats.w + (radiusChange * Time.deltaTime * radiusChangeSpeed));
+
+        innerCircleStats.w = Mathf.Clamp(innerCircleStats.w, -outerCircleStats.w * (1 - distToOuterTangent), outerCircleStats.w * (1 - distToOuterTangent));
     }
 
     void SpawnTangentCircles()
