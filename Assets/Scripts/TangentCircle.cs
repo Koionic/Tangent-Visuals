@@ -127,7 +127,7 @@ public class TangentCircle : TangentEquations
     /// <param name="stats">Position held in xyz, radius of circle held in w</param>
     void SetCircleStats(GameObject circle, Vector4 stats)
     {
-        circle.transform.position = CentrePositionOf(stats);
+        circle.transform.position = CentrePositionOf(stats) + transform.position;
         circle.transform.localScale = ScaleOf(stats);
     }
 
