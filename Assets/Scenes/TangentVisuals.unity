@@ -123,6 +123,213 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &137417280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137417282}
+  - component: {fileID: 137417281}
+  m_Layer: 0
+  m_Name: Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &137417281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137417280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d61eb86a80ab6408aa2ab70fe6a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circlePrefab: {fileID: 1071255069362845164, guid: f3b3160e07792cd4395ea3e331c4d63b, type: 3}
+  innerCirclePrefab: {fileID: 8303824151339428401, guid: 086f55ea7c7625243a6ada44551eb89e, type: 3}
+  outerCirclePrefab: {fileID: 588111958122956793, guid: 6400551dc5ac4044fae3ce83939faedd, type: 3}
+  innerCircleStats: {x: 0, y: 0, z: 0, w: 2.5}
+  outerCircleStats: {x: 0, y: 0, z: 0, w: 5}
+  tangentCircleAmount: 64
+  gamepadInput: {fileID: 573813505}
+  joystickSmoothAmount: 0.02
+  distToOuterTangent: 0.6
+  radiusChangeSpeed: 10
+--- !u!4 &137417282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137417280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &173981541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 173981543}
+  - component: {fileID: 173981542}
+  m_Layer: 0
+  m_Name: Bot Bot Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &173981542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173981541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d61eb86a80ab6408aa2ab70fe6a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circlePrefab: {fileID: 1071255069362845164, guid: f3b3160e07792cd4395ea3e331c4d63b, type: 3}
+  innerCirclePrefab: {fileID: 8303824151339428401, guid: 086f55ea7c7625243a6ada44551eb89e, type: 3}
+  outerCirclePrefab: {fileID: 588111958122956793, guid: 6400551dc5ac4044fae3ce83939faedd, type: 3}
+  innerCircleStats: {x: 0, y: 0, z: 0, w: 2.5}
+  outerCircleStats: {x: 0, y: 0, z: 0, w: 4}
+  tangentCircleAmount: 64
+  gamepadInput: {fileID: 573813505}
+  joystickSmoothAmount: 0.02
+  distToOuterTangent: 0.6
+  radiusChangeSpeed: 8
+--- !u!4 &173981543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173981541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: 0, z: -15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &299724425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 299724427}
+  - component: {fileID: 299724426}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &299724426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299724425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: c32923b09aaa5024db3aa34c57d02c81, type: 2}
+--- !u!4 &299724427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299724425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.118792, y: 4.192471, z: -3.8241978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &325309890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 325309892}
+  - component: {fileID: 325309891}
+  m_Layer: 0
+  m_Name: Top Top Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &325309891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325309890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d61eb86a80ab6408aa2ab70fe6a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circlePrefab: {fileID: 1071255069362845164, guid: f3b3160e07792cd4395ea3e331c4d63b, type: 3}
+  innerCirclePrefab: {fileID: 8303824151339428401, guid: 086f55ea7c7625243a6ada44551eb89e, type: 3}
+  outerCirclePrefab: {fileID: 588111958122956793, guid: 6400551dc5ac4044fae3ce83939faedd, type: 3}
+  innerCircleStats: {x: 0, y: 0, z: 0, w: 2.5}
+  outerCircleStats: {x: 0, y: 0, z: 0, w: 4}
+  tangentCircleAmount: 64
+  gamepadInput: {fileID: 573813505}
+  joystickSmoothAmount: 0.02
+  distToOuterTangent: 0.6
+  radiusChangeSpeed: 8
+--- !u!4 &325309892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325309890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &573813504
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +433,19 @@ MonoBehaviour:
     m_ActionId: 0e5cbc7b-1e7b-4eba-9332-9491efe29bbc
     m_ActionName: Player/Up/Down[/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 573813505}
+        m_TargetAssemblyTypeName: Move, Assembly-CSharp
+        m_MethodName: UpAndDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: dd90ccb1-070e-4799-826c-cf95894f2aeb
     m_ActionName: Player/Alter Colour[/XInputControllerWindows/dpad/y]
   - m_PersistentCalls:
@@ -262,7 +481,166 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &725634626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725634628}
+  - component: {fileID: 725634627}
+  m_Layer: 0
+  m_Name: Bottom Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &725634627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725634626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d61eb86a80ab6408aa2ab70fe6a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circlePrefab: {fileID: 1071255069362845164, guid: f3b3160e07792cd4395ea3e331c4d63b, type: 3}
+  innerCirclePrefab: {fileID: 8303824151339428401, guid: 086f55ea7c7625243a6ada44551eb89e, type: 3}
+  outerCirclePrefab: {fileID: 588111958122956793, guid: 6400551dc5ac4044fae3ce83939faedd, type: 3}
+  innerCircleStats: {x: 0, y: 0, z: 0, w: 2.5}
+  outerCircleStats: {x: 0, y: 0, z: 0, w: 5}
+  tangentCircleAmount: 64
+  gamepadInput: {fileID: 573813505}
+  joystickSmoothAmount: 0.02
+  distToOuterTangent: 0.6
+  radiusChangeSpeed: 10
+--- !u!4 &725634628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725634626}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &975309855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975309857}
+  - component: {fileID: 975309856}
+  m_Layer: 0
+  m_Name: Bottom Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &975309856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975309855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d61eb86a80ab6408aa2ab70fe6a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circlePrefab: {fileID: 1071255069362845164, guid: f3b3160e07792cd4395ea3e331c4d63b, type: 3}
+  innerCirclePrefab: {fileID: 8303824151339428401, guid: 086f55ea7c7625243a6ada44551eb89e, type: 3}
+  outerCirclePrefab: {fileID: 588111958122956793, guid: 6400551dc5ac4044fae3ce83939faedd, type: 3}
+  innerCircleStats: {x: 0, y: 0, z: 0, w: 2.5}
+  outerCircleStats: {x: 0, y: 0, z: 0, w: 5}
+  tangentCircleAmount: 64
+  gamepadInput: {fileID: 573813505}
+  joystickSmoothAmount: 0.02
+  distToOuterTangent: 0.6
+  radiusChangeSpeed: 10
+--- !u!4 &975309857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975309855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1402855310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1402855312}
+  - component: {fileID: 1402855311}
+  m_Layer: 0
+  m_Name: Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1402855311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402855310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d61eb86a80ab6408aa2ab70fe6a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circlePrefab: {fileID: 1071255069362845164, guid: f3b3160e07792cd4395ea3e331c4d63b, type: 3}
+  innerCirclePrefab: {fileID: 8303824151339428401, guid: 086f55ea7c7625243a6ada44551eb89e, type: 3}
+  outerCirclePrefab: {fileID: 588111958122956793, guid: 6400551dc5ac4044fae3ce83939faedd, type: 3}
+  innerCircleStats: {x: 0, y: 0, z: 0, w: 2.5}
+  outerCircleStats: {x: 0, y: 0, z: 0, w: 5}
+  tangentCircleAmount: 64
+  gamepadInput: {fileID: 573813505}
+  joystickSmoothAmount: 0.02
+  distToOuterTangent: 0.6
+  radiusChangeSpeed: 10
+--- !u!4 &1402855312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402855310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1446349257
 GameObject:
@@ -276,7 +654,8 @@ GameObject:
   - component: {fileID: 1446349259}
   - component: {fileID: 1446349258}
   - component: {fileID: 1446349261}
-  m_Layer: 0
+  - component: {fileID: 1446349262}
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -317,8 +696,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -341,13 +720,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446349257}
-  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 32, z: -25}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1446349261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +758,66 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1446349262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446349257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1446349260}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1478148764
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +910,112 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1511021001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1511021003}
+  - component: {fileID: 1511021002}
+  m_Layer: 0
+  m_Name: Top Top Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1511021002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511021001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d61eb86a80ab6408aa2ab70fe6a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circlePrefab: {fileID: 1071255069362845164, guid: f3b3160e07792cd4395ea3e331c4d63b, type: 3}
+  innerCirclePrefab: {fileID: 8303824151339428401, guid: 086f55ea7c7625243a6ada44551eb89e, type: 3}
+  outerCirclePrefab: {fileID: 588111958122956793, guid: 6400551dc5ac4044fae3ce83939faedd, type: 3}
+  innerCircleStats: {x: 0, y: 0, z: 0, w: 2.5}
+  outerCircleStats: {x: 0, y: 0, z: 0, w: 4}
+  tangentCircleAmount: 64
+  gamepadInput: {fileID: 573813505}
+  joystickSmoothAmount: 0.02
+  distToOuterTangent: 0.6
+  radiusChangeSpeed: 8
+--- !u!4 &1511021003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511021001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: 0, z: 15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1809432222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1809432224}
+  - component: {fileID: 1809432223}
+  m_Layer: 0
+  m_Name: Bot Bot Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1809432223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809432222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d61eb86a80ab6408aa2ab70fe6a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circlePrefab: {fileID: 1071255069362845164, guid: f3b3160e07792cd4395ea3e331c4d63b, type: 3}
+  innerCirclePrefab: {fileID: 8303824151339428401, guid: 086f55ea7c7625243a6ada44551eb89e, type: 3}
+  outerCirclePrefab: {fileID: 588111958122956793, guid: 6400551dc5ac4044fae3ce83939faedd, type: 3}
+  innerCircleStats: {x: 0, y: 0, z: 0, w: 2.5}
+  outerCircleStats: {x: 0, y: 0, z: 0, w: 4}
+  tangentCircleAmount: 64
+  gamepadInput: {fileID: 573813505}
+  joystickSmoothAmount: 0.02
+  distToOuterTangent: 0.6
+  radiusChangeSpeed: 8
+--- !u!4 &1809432224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809432222}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: -15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1876945989
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,12 +1027,12 @@ GameObject:
   - component: {fileID: 1876945991}
   - component: {fileID: 1876945990}
   m_Layer: 0
-  m_Name: CircleParent
+  m_Name: Top Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1876945990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,13 +1045,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d61eb86a80ab6408aa2ab70fe6a487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circlePrefab: {fileID: 278631051041131173, guid: 4074cadebb835ec40b6f82339e83e2cd, type: 3}
-  innerCircleStats: {x: 0, y: 0, z: 0, w: 5}
-  outerCircleStats: {x: 0, y: 0, z: 0, w: 10}
-  tangentCircleAmount: 16
+  circlePrefab: {fileID: 1071255069362845164, guid: f3b3160e07792cd4395ea3e331c4d63b, type: 3}
+  innerCirclePrefab: {fileID: 8303824151339428401, guid: 086f55ea7c7625243a6ada44551eb89e, type: 3}
+  outerCirclePrefab: {fileID: 588111958122956793, guid: 6400551dc5ac4044fae3ce83939faedd, type: 3}
+  innerCircleStats: {x: 0, y: 0, z: 0, w: 2.5}
+  outerCircleStats: {x: 0, y: 0, z: 0, w: 5}
+  tangentCircleAmount: 64
   gamepadInput: {fileID: 573813505}
   joystickSmoothAmount: 0.02
-  distToOuterTangent: 0.2
+  distToOuterTangent: 0.6
   radiusChangeSpeed: 10
 --- !u!4 &1876945991
 Transform:
@@ -516,11 +1063,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876945989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: 0}
+  m_LocalPosition: {x: 15, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1936047599
 GameObject:
@@ -533,12 +1080,12 @@ GameObject:
   - component: {fileID: 1936047601}
   - component: {fileID: 1936047600}
   m_Layer: 0
-  m_Name: CircleParent (1)
+  m_Name: Top Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1936047600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,13 +1098,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d61eb86a80ab6408aa2ab70fe6a487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circlePrefab: {fileID: 278631051041131173, guid: 4074cadebb835ec40b6f82339e83e2cd, type: 3}
-  innerCircleStats: {x: 0, y: 0, z: 0, w: 5}
-  outerCircleStats: {x: 0, y: 0, z: 0, w: 10}
-  tangentCircleAmount: 16
+  circlePrefab: {fileID: 1071255069362845164, guid: f3b3160e07792cd4395ea3e331c4d63b, type: 3}
+  innerCirclePrefab: {fileID: 8303824151339428401, guid: 086f55ea7c7625243a6ada44551eb89e, type: 3}
+  outerCirclePrefab: {fileID: 588111958122956793, guid: 6400551dc5ac4044fae3ce83939faedd, type: 3}
+  innerCircleStats: {x: 0, y: 0, z: 0, w: 2.5}
+  outerCircleStats: {x: 0, y: 0, z: 0, w: 5}
+  tangentCircleAmount: 64
   gamepadInput: {fileID: 573813505}
   joystickSmoothAmount: 0.02
-  distToOuterTangent: 0.2
+  distToOuterTangent: 0.6
   radiusChangeSpeed: 10
 --- !u!4 &1936047601
 Transform:
@@ -567,9 +1116,62 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936047599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalPosition: {x: -15, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2140450032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2140450034}
+  - component: {fileID: 2140450033}
+  m_Layer: 0
+  m_Name: Centre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2140450033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140450032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d61eb86a80ab6408aa2ab70fe6a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circlePrefab: {fileID: 1071255069362845164, guid: f3b3160e07792cd4395ea3e331c4d63b, type: 3}
+  innerCirclePrefab: {fileID: 8303824151339428401, guid: 086f55ea7c7625243a6ada44551eb89e, type: 3}
+  outerCirclePrefab: {fileID: 588111958122956793, guid: 6400551dc5ac4044fae3ce83939faedd, type: 3}
+  innerCircleStats: {x: 0, y: 0, z: 0, w: 5}
+  outerCircleStats: {x: 0, y: 0, z: 0, w: 20}
+  tangentCircleAmount: 32
+  gamepadInput: {fileID: 573813505}
+  joystickSmoothAmount: 0.02
+  distToOuterTangent: 0.6
+  radiusChangeSpeed: 20
+--- !u!4 &2140450034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140450032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

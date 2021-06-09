@@ -7,12 +7,14 @@ public class TangentCircle : TangentEquations
     public GameObject circlePrefab;
     GameObject innerCircleObj, outerCircleObj;
 
+    public GameObject innerCirclePrefab, outerCirclePrefab;
+
     public Vector4 innerCircleStats = new Vector4(), outerCircleStats = new Vector4();
 
     List<Vector4> tangentCircleStats = new List<Vector4>();
     List<GameObject> tangentCircleObjs = new List<GameObject>();
 
-    [Range(1,64)]
+    [Range(1, 512)]
     public int tangentCircleAmount;
 
     int prevCircleCount;
@@ -29,18 +31,22 @@ public class TangentCircle : TangentEquations
 
     float radiusChange;
 
-    [Range(0.1f, 10)]
+    [Range(0.1f, 20)]
     public float radiusChangeSpeed;
+
+    int dPadInput;
 
     // Start is called before the first frame update
     void Start()
     {
-        innerCircleObj = SpawnCircle(innerCircleStats);
-        outerCircleObj = SpawnCircle(outerCircleStats);
+        innerCircleObj = SpawnCircle(innerCircleStats, innerCirclePrefab);
+        outerCircleObj = SpawnCircle(outerCircleStats, outerCirclePrefab);
 
         SpawnTangentCircles();
 
         prevCircleCount = tangentCircleAmount;
+
+        gamepadInput.DPad.AddListener(DPadInput);
     }
 
     // Update is called once per frame
@@ -63,8 +69,15 @@ public class TangentCircle : TangentEquations
         for (int i = 0; i < tangentCircleAmount; i++)
         {
             UpdateTangentStat(i);
-            SetCircleStats(tangentCircleObjs[i], tangentCircleStats[i]);
+            SetCircleStats(tangentCircleObjs[i], tangentCircleStats[i], true);
         }
+    }
+
+    void DPadInput(float newInput)
+    {
+        dPadInput = (int)newInput;
+
+        tangentCircleAmount += dPadInput;
     }
 
     void PlayerInput()
@@ -72,6 +85,8 @@ public class TangentCircle : TangentEquations
         leftJoy = gamepadInput.LeftJoystick;
 
         radiusChange = gamepadInput.TriggersInput;
+
+        print((int)gamepadInput.UpDownInput);
 
         smoothLeftJoy = new Vector2(smoothLeftJoy.x * (1 - joystickSmoothAmount) + leftJoy.x * joystickSmoothAmount,
                                     smoothLeftJoy.y * (1 - joystickSmoothAmount) + leftJoy.y * joystickSmoothAmount);
@@ -111,9 +126,9 @@ public class TangentCircle : TangentEquations
         }
     }
 
-    GameObject SpawnCircle(Vector4 circleStats)
+    GameObject SpawnCircle(Vector4 circleStats, GameObject prefab = null)
     {
-        GameObject newCircle = Instantiate(circlePrefab, transform);
+        GameObject newCircle = Instantiate(prefab ? prefab : circlePrefab, transform);
 
         SetCircleStats(newCircle, circleStats);
 
@@ -125,10 +140,16 @@ public class TangentCircle : TangentEquations
     /// </summary>
     /// <param name="circle">GameObject to be updated</param>
     /// <param name="stats">Position held in xyz, radius of circle held in w</param>
-    void SetCircleStats(GameObject circle, Vector4 stats)
+    /// <param name="childCircle">Position held in xyz, radius of circle held in w</param>
+    void SetCircleStats(GameObject circle, Vector4 stats, bool childCircle = false)
     {
         circle.transform.position = CentrePositionOf(stats) + transform.position;
         circle.transform.localScale = ScaleOf(stats);
+
+        if (childCircle)
+        {
+            circle.SetActive(ScaleOf(stats).x < ScaleOf(outerCircleStats).x);
+        }
     }
 
     GameObject SpawnTangentCircle(int iteration)

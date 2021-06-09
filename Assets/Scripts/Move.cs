@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class Move : MonoBehaviour
 {
@@ -48,6 +49,14 @@ public class Move : MonoBehaviour
     {
         get { return triggersInput; }
     }
+
+    public float UpDownInput
+    {
+        get { return upDownInput; }
+        set { upDownInput = value; }
+    }
+
+    public UnityEvent<float> DPad;
 
     float triggersInput = 0f;
 
@@ -168,6 +177,8 @@ public class Move : MonoBehaviour
         float input = context.ReadValue<float>();
 
         upDownInput = input;
+
+        DPad.Invoke(upDownInput);
 
         ResetTimer();
     }

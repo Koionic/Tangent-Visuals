@@ -51,10 +51,10 @@ public class @PlayerInputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Alter Colour"",
-                    ""type"": ""Value"",
+                    ""name"": ""Up/Down DPad"",
+                    ""type"": ""Button"",
                     ""id"": ""dd90ccb1-070e-4799-826c-cf95894f2aeb"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -218,9 +218,20 @@ public class @PlayerInputMaster : IInputActionCollection, IDisposable
                     ""id"": ""c003065d-ad63-40d7-add7-ba71552257a9"",
                     ""path"": ""<Gamepad>/dpad/y"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Clamp(max=1)"",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Alter Colour"",
+                    ""action"": ""Up/Down DPad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ed031728-bf5f-4b27-becd-efe0017e4b5f"",
+                    ""path"": ""<Gamepad>/dpad/y"",
+                    ""interactions"": """",
+                    ""processors"": ""Clamp(min=-1)"",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Up/Down DPad"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -329,7 +340,7 @@ public class @PlayerInputMaster : IInputActionCollection, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Roll = m_Player.FindAction("Roll", throwIfNotFound: true);
         m_Player_UpDown = m_Player.FindAction("Up/Down", throwIfNotFound: true);
-        m_Player_AlterColour = m_Player.FindAction("Alter Colour", throwIfNotFound: true);
+        m_Player_UpDownDPad = m_Player.FindAction("Up/Down DPad", throwIfNotFound: true);
         m_Player_CycleRGB = m_Player.FindAction("Cycle RGB", throwIfNotFound: true);
         m_Player_AutoLook = m_Player.FindAction("Auto Look", throwIfNotFound: true);
         m_Player_AutoMove = m_Player.FindAction("Auto Move", throwIfNotFound: true);
@@ -387,7 +398,7 @@ public class @PlayerInputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Roll;
     private readonly InputAction m_Player_UpDown;
-    private readonly InputAction m_Player_AlterColour;
+    private readonly InputAction m_Player_UpDownDPad;
     private readonly InputAction m_Player_CycleRGB;
     private readonly InputAction m_Player_AutoLook;
     private readonly InputAction m_Player_AutoMove;
@@ -400,7 +411,7 @@ public class @PlayerInputMaster : IInputActionCollection, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Roll => m_Wrapper.m_Player_Roll;
         public InputAction @UpDown => m_Wrapper.m_Player_UpDown;
-        public InputAction @AlterColour => m_Wrapper.m_Player_AlterColour;
+        public InputAction @UpDownDPad => m_Wrapper.m_Player_UpDownDPad;
         public InputAction @CycleRGB => m_Wrapper.m_Player_CycleRGB;
         public InputAction @AutoLook => m_Wrapper.m_Player_AutoLook;
         public InputAction @AutoMove => m_Wrapper.m_Player_AutoMove;
@@ -426,9 +437,9 @@ public class @PlayerInputMaster : IInputActionCollection, IDisposable
                 @UpDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUpDown;
                 @UpDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUpDown;
                 @UpDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUpDown;
-                @AlterColour.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAlterColour;
-                @AlterColour.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAlterColour;
-                @AlterColour.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAlterColour;
+                @UpDownDPad.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUpDownDPad;
+                @UpDownDPad.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUpDownDPad;
+                @UpDownDPad.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUpDownDPad;
                 @CycleRGB.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCycleRGB;
                 @CycleRGB.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCycleRGB;
                 @CycleRGB.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCycleRGB;
@@ -457,9 +468,9 @@ public class @PlayerInputMaster : IInputActionCollection, IDisposable
                 @UpDown.started += instance.OnUpDown;
                 @UpDown.performed += instance.OnUpDown;
                 @UpDown.canceled += instance.OnUpDown;
-                @AlterColour.started += instance.OnAlterColour;
-                @AlterColour.performed += instance.OnAlterColour;
-                @AlterColour.canceled += instance.OnAlterColour;
+                @UpDownDPad.started += instance.OnUpDownDPad;
+                @UpDownDPad.performed += instance.OnUpDownDPad;
+                @UpDownDPad.canceled += instance.OnUpDownDPad;
                 @CycleRGB.started += instance.OnCycleRGB;
                 @CycleRGB.performed += instance.OnCycleRGB;
                 @CycleRGB.canceled += instance.OnCycleRGB;
@@ -527,7 +538,7 @@ public class @PlayerInputMaster : IInputActionCollection, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnRoll(InputAction.CallbackContext context);
         void OnUpDown(InputAction.CallbackContext context);
-        void OnAlterColour(InputAction.CallbackContext context);
+        void OnUpDownDPad(InputAction.CallbackContext context);
         void OnCycleRGB(InputAction.CallbackContext context);
         void OnAutoLook(InputAction.CallbackContext context);
         void OnAutoMove(InputAction.CallbackContext context);

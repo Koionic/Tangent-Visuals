@@ -38,12 +38,12 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Alter Colour",
-                    "type": "Value",
+                    "name": "Up/Down DPad",
+                    "type": "Button",
                     "id": "dd90ccb1-070e-4799-826c-cf95894f2aeb",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Tap"
                 },
                 {
                     "name": "Cycle RGB",
@@ -203,11 +203,22 @@
                 {
                     "name": "",
                     "id": "c003065d-ad63-40d7-add7-ba71552257a9",
-                    "path": "<Gamepad>/dpad/y",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Alter Colour",
+                    "action": "Up/Down DPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed031728-bf5f-4b27-becd-efe0017e4b5f",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "Invert",
+                    "groups": "Gamepad",
+                    "action": "Up/Down DPad",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
